@@ -185,6 +185,8 @@ Rails.application.routes.draw do
   get '/about/more', to: 'about#more'
   get '/terms',      to: 'about#terms'
 
+  get '/auth/twitter/callback',      to: 'twitter#callback'
+
   root 'home#index'
 
   match '*unmatched_route',
