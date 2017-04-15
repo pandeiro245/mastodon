@@ -15,6 +15,8 @@
           %span= t 'about.user_count_before'
           %strong= number_with_delimiter @instance_presenter.user_count
           %span= t 'about.user_count_after'
+          - User.all.each do |user|
+            = link_to image_tag(user.account.avatar_remote_url), account_path(user.account)
         .section
           %span= t 'about.status_count_before'
           %strong= number_with_delimiter @instance_presenter.status_count
