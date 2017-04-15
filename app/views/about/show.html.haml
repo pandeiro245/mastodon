@@ -27,7 +27,16 @@
     - if true
       .closed-registrations-message
         .info
-          =link_to 'Twitter Login', '/auth/twitter'
+          =link_to image_tag('https://g.twimg.com/dev/sites/default/files/images_documentation/sign-in-with-twitter-gray.png'), '/auth/twitter'
+          %br
+          ※ログインしてもそのアカウントで勝手にツイートしたりすることはありません
+          %br
+          %br
+          = link_to '本家に手を加えた部分はこちらから確認できます。', 'https://github.com/pandeiro245/mastodon/pull/2/files'
+          %br
+          %br
+          = link_to t('about.about_this'), about_more_path
+
     - elsif @instance_presenter.open_registrations
       = render 'registration'
     - else
