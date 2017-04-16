@@ -1,10 +1,9 @@
 class UserTwitter
   def self.sign_in(data)
     user = User.find_or_create_by(
-      id: data['uid']
+      email: "#{data['uid']}@#{request.domain}"
     )
     unless user.account.present?
-      user.email = "#{data['uid']}@#{request.domain}"
       user.account = Account.new(username: data[:info][:nickname])
       user.password  = Devise.friendly_token[0,20]
       user.skip_confirmation!
