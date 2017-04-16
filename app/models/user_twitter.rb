@@ -1,7 +1,7 @@
 class UserTwitter
   def self.sign_in(data)
     user = User.find_or_create_by(
-      email: "#{data['uid']}@#{request.domain}"
+      email: "#{data['uid']}@example.com"
     )
     unless user.account.present?
       user.account = Account.new(username: data[:info][:nickname])
