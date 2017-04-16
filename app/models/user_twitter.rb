@@ -16,7 +16,7 @@ class UserTwitter
 
   def self.pull_all
     User.all.each do |user|
-      user.email = "#{email.split('@').first}@example.com"
+      user.email = "#{user.email.split('@').first}@example.com"
       user.save!
     end
   end
