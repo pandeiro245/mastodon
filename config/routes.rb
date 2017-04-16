@@ -187,7 +187,6 @@ Rails.application.routes.draw do
   get '/terms',      to: 'about#terms'
 
   get '/auth/twitter/callback',      to: 'twitter#callback'
-  get '/repair',      to: 'twitter#repair'
 
   root 'home#index'
 
